@@ -6,9 +6,20 @@
     justify-content: center;
 }
 
+img {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 2rem;
+}
+
 form {
     max-width: 500px;
     width: 50%;
+}
+
+form>div:first-child {
+    display: flex;
+    justify-content: center;
 }
 
 p, h1, span {
@@ -29,6 +40,7 @@ p, span {
     font-size: 1.8rem;
     line-height: 2.1rem;
     text-shadow: 0px .4rem .4rem rgba(0, 0, 0, 0.25);
+    margin-top: 1rem;
 }
 
 .color-disable {
@@ -63,3 +75,4 @@ input[type = submit] {
 .formHeader {
     margin-bottom: 9rem;
 }
+
