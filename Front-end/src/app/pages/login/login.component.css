@@ -52,7 +52,7 @@ p, span {
     color: rgba(0, 0, 0, 0.55);
 }
 
-input[type = text] {
+input[type = email], input[type = password]  {
     width: calc(100% - 4rem);
     height: 6rem;
     border: solid .1rem black;
@@ -77,7 +77,47 @@ input[type = submit] {
     line-height: 2.1rem;
 }
 
+input[type=checkbox] {
+    position: relative;
+    cursor: pointer;
+  }
+  
+  input[type=checkbox]:before {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 1.5rem;
+    height: 1.5rem;
+    top: 0;
+    left: 0;
+    background-color: black;
+  }
+  
+  input[type=checkbox]:checked:after {
+    content: "";
+    display: block;
+    width: .4rem;
+    height: .8rem;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+    position: absolute;
+    top: .1rem;
+    left: .4rem;
+  }
+  span{
+    margin: 0px 15px;
+  }
+
 .formHeader {
-    margin-bottom: 9rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
+div.input-check {
+    display: flex;
+    justify-content: center;
+}
