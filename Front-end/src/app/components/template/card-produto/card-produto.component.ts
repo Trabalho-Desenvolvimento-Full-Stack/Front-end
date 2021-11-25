@@ -1,3 +1,4 @@
+import { produtos } from './../../../models/produto.model';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -5,11 +6,6 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './card-produto.component.html',
   styleUrls: ['./card-produto.component.css']
 })
-export class CardProdutoComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
+export class CardProdutoComponent {
+  produtos = produtos
 }
