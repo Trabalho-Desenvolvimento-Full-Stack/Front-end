@@ -1,0 +1,40 @@
+.container {
+  width: 100%;
+  height: 7rem;
+  background-color: black;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: absolute;
+  bottom: 0;
+}
+
+.container p{
+  font: 700 1.2rem Arial, Helvetica, sans-serif;
+  color: white;
+  margin: 0 5rem;
+}
+
+.redes-sociais {
+  width: 10%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+span {
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+span > img {
+  background: url("https://place-hold.it/80") no-repeat center center / cover;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
