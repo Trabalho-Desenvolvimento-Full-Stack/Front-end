@@ -9,6 +9,9 @@ import { FooterComponent } from './components/template/footer/footer.component';
 import { HomeComponent } from './pages/home/home.component';
 import { EsqueceuSenhaComponent } from './pages/esqueceu-senha/esqueceu-senha.component';
 import { CardProdutoComponent } from './components/template/card-produto/card-produto.component';
+import { CadastroGeralComponent } from './pages/cadastro-geral/cadastro-geral.component';
+import { CadastroAdminComponent } from './pages/cadastro-admin/cadastro-admin.component';
+import { CadastroClienteComponent } from './pages/cadastro-cliente/cadastro-cliente.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +21,10 @@ import { CardProdutoComponent } from './components/template/card-produto/card-pr
     FooterComponent,
     HomeComponent,
     EsqueceuSenhaComponent,
-    CardProdutoComponent
+    CardProdutoComponent,
+    CadastroGeralComponent,
+    CadastroAdminComponent,
+    CadastroClienteComponent
   ],
   imports: [
     BrowserModule,
