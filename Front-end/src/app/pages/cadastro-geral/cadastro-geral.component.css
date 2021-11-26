@@ -4,6 +4,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    padding-top: 5rem;
 }
 
 a {
@@ -125,19 +126,47 @@ div.input-check {
 .optionsRow {
     display: flex;
     justify-content: space-evenly;
-}
-
-.optinsRow>div {
-        
+    align-items: center;
 }
 
 .vr {
     width: 2px;
-    background-color: black;
-    height: 7rem;
-    margin-top: 5%;
+    background-color: rgba(0, 0, 0, 0.3);;
+    height: 27rem;
+    margin: 5% 0;
 }
 
 .icon {
     height: 11rem;
 }
+
+input[type=radio] {
+    position: relative;
+    cursor: pointer;
+  }
+  
+  input[type=radio]:before {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 1.5rem;
+    height: 1.5rem;
+    top: 0;
+    left: 0;
+    background-color: black;
+  }
+  
+  input[type=radio]:checked:after {
+    content: "";
+    display: block;
+    width: .4rem;
+    height: .8rem;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+    position: absolute;
+    top: .1rem;
+    left: .4rem;
+  }
