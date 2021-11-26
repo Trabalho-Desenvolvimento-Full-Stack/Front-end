@@ -124,7 +124,7 @@ div.input-check {
 
 .optionsRow {
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
 }
 
 .optinsRow>div {
@@ -134,6 +134,10 @@ div.input-check {
 .vr {
     width: 2px;
     background-color: black;
-    height: 90%;
+    height: 7rem;
     margin-top: 5%;
+}
+
+.icon {
+    height: 11rem;
 }
