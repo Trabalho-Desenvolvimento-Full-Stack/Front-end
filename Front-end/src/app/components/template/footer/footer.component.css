@@ -6,6 +6,8 @@
   align-items: center;
   justify-content: space-between;
   bottom: 0;
+  position: sticky;
+  top: 100vh;
 }
 
 .container p{

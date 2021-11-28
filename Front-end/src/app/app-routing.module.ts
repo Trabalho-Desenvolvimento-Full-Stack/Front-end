@@ -1,4 +1,5 @@
-import { NgModule } from '@angular/core';
+import { RelatorioVendasComponent } from './pages/relatorio-vendas/relatorio-vendas.component';
+import { NgModule, Component } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './pages/home/home.component';
 import { EsqueceuSenhaComponent } from './pages/esqueceu-senha/esqueceu-senha.component';
@@ -13,6 +14,7 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'esqueceusenha', component: EsqueceuSenhaComponent },
   {path:"cliente", component: CadastroClienteComponent},
+  {path:"relatorioVendas", component: RelatorioVendasComponent},
   { path: 'cadastro', component: CadastroGeralComponent, children: [
     { path: 'admin', component: CadastroAdminComponent },
     { path: 'cliente', component: CadastroClienteComponent }
