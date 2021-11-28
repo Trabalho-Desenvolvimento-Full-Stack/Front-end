@@ -12,6 +12,7 @@ const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
   { path: 'esqueceusenha', component: EsqueceuSenhaComponent },
+  {path:"cliente", component: CadastroClienteComponent},
   { path: 'cadastro', component: CadastroGeralComponent, children: [
     { path: 'admin', component: CadastroAdminComponent },
     { path: 'cliente', component: CadastroClienteComponent }

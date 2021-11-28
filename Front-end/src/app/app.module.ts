@@ -12,6 +12,7 @@ import { CardProdutoComponent } from './components/template/card-produto/card-pr
 import { CadastroGeralComponent } from './pages/cadastro-geral/cadastro-geral.component';
 import { CadastroAdminComponent } from './pages/cadastro-admin/cadastro-admin.component';
 import { CadastroClienteComponent } from './pages/cadastro-cliente/cadastro-cliente.component';
+import { RelatorioVendasComponent } from './pages/relatorio-vendas/relatorio-vendas.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { CadastroClienteComponent } from './pages/cadastro-cliente/cadastro-clie
     CardProdutoComponent,
     CadastroGeralComponent,
     CadastroAdminComponent,
-    CadastroClienteComponent
+    CadastroClienteComponent,
+    RelatorioVendasComponent
   ],
   imports: [
     BrowserModule,

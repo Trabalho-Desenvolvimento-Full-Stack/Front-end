@@ -1,1 +1,35 @@
-<p>cadastro-cliente works!</p>
+<div class="container-fluid">
+    <div class="logo-container">
+        <img class='logo' src="../../../assets/LogoGrande.svg">
+        <div class="logo-text">
+            <h1>Faça parte desse time!</h1>
+            <p>Crie seu perfil de Cliente :)</p>
+        </div>
+    </div>
+    <form class="form-grid">
+        <p class="grid-p">perfil</p>
+
+        <input type="email" placeholder="Endereço de Email">
+        <input type="password" placeholder="Senha">
+        <input type="text" placeholder="Nome Completo">
+        <input type="text" placeholder="CPF">
+
+        <p class="grid-p">Entrega</p>
+
+        <input type="text" placeholder="Endereço">
+        <input type="text" placeholder="Número">
+        <input type="text" placeholder="Complemento">
+        <input type="text" placeholder="Bairro">
+        <input type="text" placeholder="CEP">
+        <input type="text" placeholder="Cidade">
+
+        <div class="form-submit">
+            <div class="input-check">
+                <div><input type="checkbox" id="checkinput"> <span class="color-disable"><label for="checkinput">Concordo com os termos</label></span></div>
+            </div>
+            <input type="submit" value="CADASTRAR">
+            <p><span class="color-disable">Já é um usuário?</span><a routerLink="/login"> Faça seu login</a></p>
+        </div>
+
+    </form>
+</div>
