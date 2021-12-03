@@ -13,6 +13,9 @@ import { CadastroGeralComponent } from './pages/cadastro-geral/cadastro-geral.co
 import { CadastroAdminComponent } from './pages/cadastro-admin/cadastro-admin.component';
 import { CadastroClienteComponent } from './pages/cadastro-cliente/cadastro-cliente.component';
 import { RelatorioVendasComponent } from './pages/relatorio-vendas/relatorio-vendas.component';
+import { HttpClientModule } from "@angular/common/http";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+
 
 @NgModule({
   declarations: [
@@ -30,7 +33,10 @@ import { RelatorioVendasComponent } from './pages/relatorio-vendas/relatorio-ven
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,4 +1,9 @@
+import { ClienteService } from './../../services/cliente.service';
+import { Cliente } from './../../models/Cliente.model';
 import { Component, OnInit } from '@angular/core';
+import { FormGroup, Validators, FormBuilder } from '@angular/forms';
+import { Router, ActivatedRoute } from '@angular/router';
+
 
 @Component({
   selector: 'app-cadastro-cliente',
@@ -6,10 +11,88 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./cadastro-cliente.component.css']
 })
 export class CadastroClienteComponent implements OnInit {
+  id !: number;
+  cliente !: Cliente;
+  form: FormGroup;
+  nomeFormControl = this.fb.control('', { validators: [Validators.required], updateOn: 'blur' });
+  cpfFormControl = this.fb.control('', { validators: [Validators.required], updateOn: 'blur' });
+  dataNascimetoFormControl = this.fb.control('', { validators: [Validators.required], updateOn: 'blur' });
+  emailFormControl = this.fb.control('', { validators: [Validators.required], updateOn: 'blur' });
+  senhaFormControl = this.fb.control('', { validators: [Validators.required], updateOn: 'blur' });
+  ruaFormControl = this.fb.control('', { validators: [Validators.required], updateOn: 'blur' });
+  numeroFormControl = this.fb.control('', { validators: [Validators.required], updateOn: 'blur' });
+  complementoFormControl = this.fb.control('', { validators: [], updateOn: 'blur' });
+  bairroFormControl = this.fb.control('', { validators: [Validators.required], updateOn: 'blur' });
+  cidadeFormControl = this.fb.control('', { validators: [Validators.required], updateOn: 'blur' });
+  cepFormControl = this.fb.control('', { validators: [Validators.required], updateOn: 'blur' });
 
-  constructor() { }
+
+  constructor(private router: Router,
+    private fb: FormBuilder,
+    private route: ActivatedRoute,
+    private clienteService: ClienteService) {
+    this.form = this.fb.group({
+      nomeFormControl: this.nomeFormControl,
+      cpfFormControl: this.cpfFormControl,
+      dataNascimetoFormControl: this.dataNascimetoFormControl,
+      emailFormControl: this.emailFormControl,
+      senhaFormControl: this.senhaFormControl,
+      ruaFormControl: this.ruaFormControl,
+      numeroFormControl: this.numeroFormControl,
+      complementoFormControl: this.complementoFormControl,
+      bairroFormControl: this.bairroFormControl,
+      cidadeFormControl: this.cidadeFormControl,
+      cepFormControl: this.cepFormControl
+    });
+  }
 
   ngOnInit(): void {
+    let id: String;
+    //Arrumar questão do ID
+    id = this.route.snapshot.paramMap.get("id");
+    if (id != undefined || id != null) {
+      this.id = Number.parseInt(id);
+      this.clienteService.getPeloId(this.id).subscribe((cliente: Cliente) => {
+        this.nomeFormControl.setValue(cliente.nome);
+        this.emailFormControl.setValue(cliente.email);
+        this.cpfFormControl.setValue(cliente.cpf);
+        this.dataNascimetoFormControl.setValue(cliente.dataNascimento);
+        this.ruaFormControl.setValue(cliente.endereco_rua);
+        this.numeroFormControl.setValue(cliente.endereco_numero);
+        this.complementoFormControl.setValue(cliente.endereco_complemento);
+        this.bairroFormControl.setValue(cliente.endereco_cidade);
+        this.cidadeFormControl.setValue(cliente.endereco_cep);
+        this.cepFormControl.setValue(cliente.endereco_bairro);
+        this.cliente = cliente;
+      })
+    }
+  }
+
+  salvar() {
+    if (this.form.valid) {
+      if (this.cliente == undefined || this.cliente == null)
+        this.cliente = new Cliente();
+      this.cliente.nome = this.nomeFormControl.value;
+      this.cliente.cpf = this.cpfFormControl.value;
+      this.cliente.dataNascimento = this.dataNascimetoFormControl.value;
+      this.cliente.email = this.emailFormControl.value;
+      this.cliente.senha = this.senhaFormControl.value;
+      this.cliente.endereco_bairro = this.bairroFormControl.value;
+      this.cliente.endereco_cep = this.cepFormControl.value;
+      this.cliente.endereco_cidade = this.cidadeFormControl.value;
+      this.cliente.endereco_complemento = this.complementoFormControl.value;
+      this.cliente.endereco_numero = this.numeroFormControl.value;
+      this.cliente.endereco_rua = this.ruaFormControl.value;
+
+      if (this.cliente.id == undefined || this.cliente.id == 0)
+        this.clienteService.post(this.cliente).subscribe(() => {
+
+        });
+      else
+        this.clienteService.put(this.cliente).subscribe(() => {
+
+        });
+    }
   }
 
 }
