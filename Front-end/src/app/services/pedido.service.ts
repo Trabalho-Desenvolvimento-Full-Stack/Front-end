@@ -1,7 +1,7 @@
 import { Pedido } from './../models/pedido.model';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { environment } from 'src/environments/environment';
+import { environment } from './../../environments/environment';
 // inserir o baseApiUrl
 
 @Injectable({
