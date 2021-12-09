@@ -9,7 +9,6 @@ import { environment } from 'src/environments/environment';
 })
 export class ClienteService {
 
-  cliente!: Cliente;
   constructor(private http: HttpClient) { }
 
   post(cliente: Cliente){
@@ -30,5 +29,9 @@ export class ClienteService {
 
   get(){
     return this.http.get<Cliente[]>(`${environment}/cliente`);
+  }
+
+  delete(id: number) {
+    return this.http.get<Cliente[]>(`${environment}/cliente/${id}`);
   }
 }
