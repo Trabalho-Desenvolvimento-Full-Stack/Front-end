@@ -12,8 +12,8 @@ import { Cliente } from './../../models/cliente.model';
 })
 export class CadastroClienteComponent implements OnInit {
 
-  id: number;
-  cliente: Cliente;
+  id!: number;
+  cliente!: Cliente;
   form: FormGroup;
   emailFormControl = this.fb.control('', { validators: [Validators.required], updateOn: 'blur' });
   senhaFormControl = this.fb.control('', { validators: [Validators.required], updateOn: 'blur' });
@@ -45,7 +45,7 @@ export class CadastroClienteComponent implements OnInit {
   }
 
 ngOnInit(): void {
-  let id: string;
+  let id: string | null;
   id = this.route.snapshot.paramMap.get("id");
   if(id != undefined || id != null) {
   this.id = Number.parseInt(id);
